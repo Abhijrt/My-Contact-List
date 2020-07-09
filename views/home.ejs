@@ -1,46 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>This is from the EJS Template Engine</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Contact List</title>
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+    <h1>My Contact List</h1>
     <% for(let i of contact_list) { %>
-        <ul>
-            <li>
-                <p>
-                    <%= i.name %>
-                </p>
-                <p>
-                    <%= i.phone %>
-                </p>
-            </li>
-            <a href="/delete-contact/?id=<%= i._id %>">
-                D
-            </a>
-        </ul>
+    <ul>
+      <li>
+        <p>
+          <%= i.name %>
+        </p>
+        <p>
+          <%= i.phone %>
+        </p>
+      </li>
+      <a href="/delete-contact/?id=<%= i._id %>">
+        D
+      </a>
+    </ul>
     <% } %>
-
-
-
-    <% for(let i=0;i<11;i++) { %>
-        <%= i %>
-    <% } %>
-
-    <% if(true) { %>
-        <h1>Its True</h1>
+    <!-- <% for(let i=0;i<11;i++) { %> <%= i %> <% } %> <% if(true) { %>
+    <h1>Its True</h1>
     <%}else{ %>
-        <h1>Its False</h1>
-    <% } %>
-
-
+    <h1>Its False</h1>
+    <% } %> -->
 
     <form action="./create-contact" method="POST">
-        <input type="text" name ="name" placeholder="Enter your Name" required>
-        <input type="number" name = "phone" placeholder="Enter your Number" required>
-        <button type="submit"> Add Contact</button>
+      <input type="text" name="name" placeholder="Enter your Name" required />
+      <input
+        type="number"
+        name="phone"
+        placeholder="Enter your Number"
+        required
+      />
+      <button type="submit">Add Contact</button>
     </form>
-</body>
+  </body>
 </html>
